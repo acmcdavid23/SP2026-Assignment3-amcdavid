@@ -1,0 +1,49 @@
+﻿@model SP2026_Assignment3_amcdavid.ViewModels.MovieDetailsViewModel
+
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+<h1>@Model.Movie.Title</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <img src="@Model.Movie.PosterUrl" alt="@Model.Movie.Title" style="width:100%;object-fit:cover;" />
+    </div>
+    <div class="col-md-9">
+        <p><strong>Genre:</strong> @Model.Movie.Genre</p>
+        <p><strong>Year:</strong> @Model.Movie.Year</p>
+        <p><a href="@Model.Movie.ImdbUrl" target="_blank" class="btn btn-info">View on IMDB</a></p>
+        <a asp-action="Edit" asp-route-id="@Model.Movie.Id" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to Movies</a>
+    </div>
+</div>
+
+<hr />
+<h2>Reddit Sentiment Analysis</h2>
+<h3>Overall Sentiment: @Model.OverallSentiment</h3>
+
+@if (Model.RedditSentiments.Count == 0)
+{
+    <p>No Reddit comments found for this movie.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Reddit Comment</th>
+                <th>Sentiment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.RedditSentiments)
+            {
+                <tr>
+                    <td>@item.Comment</td>
+                    <td>@item.Sentiment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

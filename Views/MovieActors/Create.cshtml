@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Link Actor to Movie";
+}
+
+<h1>Link Actor to Movie</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group mb-3">
+        <label>Movie</label>
+        <select name="MovieId" class="form-control">
+            @foreach (var item in ViewBag.Movies)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Actor</label>
+        <select name="ActorId" class="form-control">
+            @foreach (var item in ViewBag.Actors)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Link" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,49 @@
+﻿@model SP2026_Assignment3_amcdavid.ViewModels.ActorDetailsViewModel
+
+@{
+    ViewData["Title"] = "Actor Details";
+}
+
+<h1>@Model.Actor.Name</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <img src="@Model.Actor.PhotoUrl" alt="@Model.Actor.Name" style="width:100%;object-fit:cover;border-radius:10px;" />
+    </div>
+    <div class="col-md-9">
+        <p><strong>Gender:</strong> @Model.Actor.Gender</p>
+        <p><strong>Age:</strong> @Model.Actor.Age</p>
+        <p><a href="@Model.Actor.ImdbUrl" target="_blank" class="btn btn-info">View on IMDB</a></p>
+        <a asp-action="Edit" asp-route-id="@Model.Actor.Id" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to Actors</a>
+    </div>
+</div>
+
+<hr />
+<h2>Reddit Sentiment Analysis</h2>
+<h3>Overall Sentiment: @Model.OverallSentiment</h3>
+
+@if (Model.RedditSentiments.Count == 0)
+{
+    <p>No Reddit comments found for this actor.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Reddit Comment</th>
+                <th>Sentiment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.RedditSentiments)
+            {
+                <tr>
+                    <td>@item.Comment</td>
+                    <td>@item.Sentiment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

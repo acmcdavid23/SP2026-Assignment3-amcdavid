@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SP2026_Assignment3_amcdavid.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<h1>Movies</h1>
+<a class="btn btn-primary mb-3" asp-action="Create">Add New Movie</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Poster</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>IMDB</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td><img src="@movie.PosterUrl" alt="@movie.Title" style="width:60px;height:90px;object-fit:cover;" /></td>
+                <td>@movie.Title</td>
+                <td>@movie.Genre</td>
+                <td>@movie.Year</td>
+                <td><a href="@movie.ImdbUrl" target="_blank">IMDB</a></td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@movie.Id">Details</a>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@movie.Id">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@movie.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

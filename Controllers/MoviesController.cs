@@ -14,10 +14,12 @@ namespace SP2026_Assignment3_amcdavid.Controllers
     {
         private readonly ApplicationDbContext _context;
         private const int MaxInputLength = 512;
+        private readonly IConfiguration _configuration;
 
-        public MoviesController(ApplicationDbContext context)
+        public MoviesController(ApplicationDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         public async Task<IActionResult> Index()
@@ -129,7 +131,7 @@ namespace SP2026_Assignment3_amcdavid.Controllers
         {
             var httpClient = new HttpClient();
             var url = "https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english";
-            var apiKey = "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";
+            var apiKey = "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";
 
             var data = new { inputs = new[] { text } };
             var json = JsonSerializer.Serialize(data);

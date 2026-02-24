@@ -130,7 +130,7 @@ namespace SP2026_Assignment3_amcdavid.Controllers
             var httpClient = new HttpClient();
             httpClient.Timeout = TimeSpan.FromSeconds(10);
             var url = "https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english";
-            var apiKey = "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";
+            var apiKey = Environment.GetEnvironmentVariable("HuggingFace__ApiKey") ?? "";
 
             var data = new { inputs = new[] { text } };
             var json = JsonSerializer.Serialize(data);

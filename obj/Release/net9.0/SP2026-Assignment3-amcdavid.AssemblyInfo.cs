@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SP2026-Assignment3-amcdavid")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f704bf3662204e9191f06b19828cb303d1d69eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SP2026-Assignment3-amcdavid")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SP2026-Assignment3-amcdavid")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

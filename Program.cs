@@ -8,17 +8,34 @@ namespace SP2026_Assignment3_amcdavid
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Read the connection string from configuration
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            // Switch database provider based on environment
+            if (builder.Environment.IsDevelopment())
+            {
+                builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlite(connectionString));
+            }
+            else
+            {
+                builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(connectionString));
+            }
 
             var app = builder.Build();
 
-            // Auto-create and migrate database on startup
-            using (var scope = app.Services.CreateScope())
+            // Only run migrations in Development (prevents Azure startup crash)
+            if (app.Environment.IsDevelopment())
             {
-                var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-                db.Database.Migrate();
+                using (var scope = app.Services.CreateScope())
+                {
+                    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                    db.Database.Migrate();
+                }
             }
 
             if (!app.Environment.IsDevelopment())
@@ -30,7 +47,9 @@ namespace SP2026_Assignment3_amcdavid
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
+
             app.MapStaticAssets();
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")

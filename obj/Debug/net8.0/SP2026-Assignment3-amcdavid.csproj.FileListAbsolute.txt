@@ -1,0 +1,10 @@
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.csproj.AssemblyReference.cache
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.AssemblyInfoInputs.cache
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.AssemblyInfo.cs
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.csproj.CoreCompileInputs.cache
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.RazorAssemblyInfo.cache
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.RazorAssemblyInfo.cs
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Debug\net8.0\SP2026-Assignment3-amcdavid.sourcelink.json

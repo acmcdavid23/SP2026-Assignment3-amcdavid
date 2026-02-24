@@ -245,3 +245,4 @@ C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Release\
 C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Release\net9.0\SP2026-Assignment3-amcdavid.pdb
 C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Release\net9.0\SP2026-Assignment3-amcdavid.genruntimeconfig.cache
 C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Release\net9.0\ref\SP2026-Assignment3-amcdavid.dll
+C:\Users\yooho\OneDrive\Desktop\MIS 521\SP2026-Assignment3-amcdavid\obj\Release\net9.0\SP2026-Assignment3-amcdavid.sourcelink.json
